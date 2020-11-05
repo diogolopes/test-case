@@ -1,0 +1,44 @@
+<p-panel header="Solicitar Informe de Rendimentos" [toggleable]="true">
+    <div class="p-fluid">
+
+        <div class="p-grid" style="padding-bottom: 10px;">
+            <div class="p-col-1"> <label for="">CPF:</label> </div>
+            <div class="p-col-2">
+                <input type="text" pInputText class="form-control" id="cpf" [(ngModel)]="informeConsultaRequest.cpf"
+                    name="cpf" />
+            </div>
+        </div>
+
+        <div class="p-grid" style="padding-bottom: 10px;">
+            <div class="p-col-1"><label for="cnpj">CNPJ:</label></div>
+            <div class="p-col-2">
+                <input type="text" pInputText class="form-control" id="cnpj" [(ngModel)]="informeConsultaRequest.cnpj"
+                    name="cnpj" />
+            </div>
+        </div>
+
+        <div class="p-grid" style="padding-bottom: 5px;">
+            <div class="p-col-1"><label for="Ano">Ano:</label></div>
+            <div class="p-col-2">
+            <p-dropdown [options]="anosResponse" (ngValue)="anoResponse" placeholder="Selecione o Ano "
+                (onChange)="anoOnChange($event)" (onClick)="preencherAnos()" optionLabel="ano"></p-dropdown>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="p-grid">
+            <div class="p-col-1">&nbsp;</div>  
+                    <div class="p-col-1"  class="p-mr-2 p-mb-2"><button pButton pRipple icon="pi pi-download"  type="button" label="Solicitar" (click)="enviar()" class="btnPrincipal" style="width:100%;"></button></div>
+                <div class="p-col-1"  class="p-mb-2"><button pButton pRipple icon="pi pi-undo"  type="button" label="Limpar" (click)="limparConsulta(false)" class="btnSecundario" style="width:100%;"></button></div>
+        </div>
+    </div>
+</p-panel>
+<p-toast></p-toast>
+<p-dialog [(visible)]="isLoading" [showHeader]="false" [resizable]="false" [modal]="true" [focusOnShow]="false"  style="background-color: #cfcece;">
+    <div style="width: 150px;height: 150px;padding-top: 15%;padding-left: 20%; background-color: #cfcece;">
+        <p-progressSpinner [style]="{width: '100px', height: '100px'}" styleClass="custom-spinner" strokeWidth="2"
+            fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+            <p style="font: bold; color: #884343;">Carregando...</p>
+    </div>
+</p-dialog>

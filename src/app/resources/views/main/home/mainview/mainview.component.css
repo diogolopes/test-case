@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+   }
+   nav{
+    height:70px;
+    background-color: #1976d2;
+   }
+   .container{
+    display: flex;
+    height: calc(100vh - 70px);
+   }
+   .container .main-body{
+    width: 100%;
+   }
+   .container aside{
+     width: 0;
+     overflow-y: auto;
+     transition: all 0.5s;
+     background-color:  white;
+   }
+   /*Im using hover event to expand sidebar for example, you can use JS to handle click event*/
+   .container:hover aside{
+     width: 215px;
+   }
+
+   .logo_bp {
+    left: 1%;
+    top: 25%;
+    position: relative;
+    right: 0%;
+  }
+
+   

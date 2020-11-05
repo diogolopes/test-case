@@ -1,0 +1,17 @@
+version: '3'
+services:
+  angular-ui:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: angular-ui
+    environment:
+      DIRF_DIRFPORTALLEGAISAPI_BACK_SERVICE_HOST: localhost
+      DIRF_DIRFPORTALLEGAISPI_BACK_SERVICE_PORT: 3000
+      PORTAL_LEGAIS_REGULATORIOS_SERVER_SERVICE_HOST: localhost
+      PORTAL_LEGAIS_REGULATORIOS_SERVER_SERVICE_PORT: 9000    
+    volumes:
+       - ./portal_legais_regulatorios_front:/usr/src/app/portal_legais_regulatorios_front
+       - /usr/src/app/portal_legais_regulatorios_front/node_modules

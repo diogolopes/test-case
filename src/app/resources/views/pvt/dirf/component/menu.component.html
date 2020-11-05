@@ -1,0 +1,26 @@
+<div class="container">
+
+  <head>
+    <link rel="stylesheet" href="./menu.component.css">
+    <title>
+      Portal Legais Regulatórios
+    </title>
+  </head>
+  <header>
+    <div class="toolbar" role="banner">
+      <img class="logo_bp" alt="Brasil Prev" src="../assets/logo_bp_new.gif" />
+      <span class="welcome">Bem-Vindo</span>
+    </div>
+  </header>
+  
+  <div class="content" role="main">
+    <div id="lateral">
+      <p-slideMenu class="link-titulo" [model]="items" [viewportHeight]="250"></p-slideMenu>
+        
+      </div> <!-- /#menu -->
+    </div>
+
+
+    <pre>{{menus | json}}</pre>
+
+  </div>
