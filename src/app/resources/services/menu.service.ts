@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 @Injectable()
 export class MenuService {
 
-  private baseURL = 'http://nf2415:3000/';  
+  private baseURL = 'http://172.30.64.66:3000/';  
   //private baseURL: string = "http://" + environment.APIKeys.hostMenuApi + ":" + environment.APIKeys.portMenuApi + "/";
 
   //private baseURL: string = "http://10.133.181.47:3000/";
